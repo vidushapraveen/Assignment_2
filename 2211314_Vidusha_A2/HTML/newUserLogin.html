@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../CSS/newUserLogin.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New User Login</title>
+</head>
+<body>
+    <div class="one">
+        <div class="main">
+            <h1>Login</h1>
+            <form>
+                <label for="">Use Name</label><br>
+                <input type="text" id="userName" placeholder="User Name"><br>
+        
+                <label for="">Password</label><br>
+                <input type="password" id="password" placeholder="Password">
+            </form>
+            <button onclick="loginNew()"> Login</button>
+        </div>
+    </div>
+
+
+    <script>
+
+        // Get data from local storage (from createUser.html)
+        let newLoginUser = localStorage.getItem("textValue4");
+        let newLoginPass = localStorage.getItem("textValue5");
+
+        function loginNew() {
+            let getUser = document.getElementById("userName").value;
+            let getPass = document.getElementById("password").value;
+
+            //New user login form validation
+            if (newLoginUser == getUser && newLoginPass == getPass){
+                window.location.assign("newUser.html");
+                alert('Sucessfully Login')
+            }else{
+                alert('Invald User Name or Password');
+            };
+
+            }       
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../CSS/index.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <!-- Sign up Button -->
+    <div class="signup">
+        <button onclick="signUp()">Sign Up</button>
+    </div>
+
+    <!-- Login Form -->
+    <div class="one">
+        <div class="main">
+            <h1>Login</h1>
+            <form>
+                <label for="">Use Name</label><br>
+                <input type="text" id="userName" placeholder="User Name"><br>
+        
+                <label for="">Password</label><br>
+                <input type="password" id="password" placeholder="Password">
+            </form>
+            <button onclick="login()"> Login</button>
+        </div>
+    </div>
+
+
+    <script>
+
+    // Main Login Data
+    arrayUser = ['vidusha' , 'praveen' , 'kavindya'];
+    arrayPass = ['abc' , '147' , '111'];
+    arrayEmail = ['one@email.com' , 'two@email.com' , 'three@email.com'];
+
+        function login(){
+
+            // Get values from login form
+            let uName = document.getElementById('userName').value;
+            let pw = document.getElementById('password').value;
+            let email = document.getElementById('arrayEmail');
+
+            // Send login data via local storage
+            localStorage.setItem("textValue1" , uName);
+            localStorage.setItem("textValue2" , pw);
+
+            // Check login data
+            let checkName = arrayUser.includes(uName);
+            let checkPw = arrayPass.includes(pw);
+
+            let indexOfUser = arrayUser.indexOf(uName);
+            let indexOfPass = arrayPass.indexOf(pw);
+
+            let emailIndex = arrayEmail[indexOfUser];
+            console.log(emailIndex);
+            localStorage.setItem("textValue3" , emailIndex);
+
+            // Login validation
+            if (checkName && checkPw) {
+                if (indexOfUser == indexOfPass) {
+                    window.location.assign("home.html");
+                    alert("Sucessfully Login")
+                } else {
+                    alert('Wrong user name or password');
+                }
+            } else {
+                alert('Wrong user name or password');
+            }
+
+    }
+
+    function signUp(){
+        window.location.assign("createUser.html");
+    }
+
+        
+    </script>
+</body>
+</html>

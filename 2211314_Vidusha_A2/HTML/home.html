@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../CSS/home.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container">
+        <h3 id="headUserName"></h3>
+        <buttn class="logout" onclick="logout()">LogOut</buttn>
+    </div>
+    <div class="background">
+        <div class="main">
+            <div class="details">
+                <h1 id="userLog"></h1>
+                <h1 id="rest"></h1>    
+            </div>
+            <button id="createUser" onclick="user()">Create User</button>    
+        </div>    
+    </div>
+    <script>
+        // Get login data from index.html 
+        document.getElementById('headUserName').innerHTML = localStorage.getItem("textValue1");
+        document.getElementById('userLog').innerHTML = localStorage.getItem("textValue1");
+        document.getElementById('rest').innerHTML = localStorage.getItem("textValue3");
+
+        function user() {
+            let createUser =  document.getElementById('createUser');
+            window.location.assign("createUser.html");
+        }
+
+        function logout() {
+            window.location.assign("index.html")
+        }
+
+    </script>
+</body>
+</html>

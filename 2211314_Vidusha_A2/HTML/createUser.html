@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../CSS/createUser.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+</head>
+<body>
+    <div class="container">
+        <h3 id="headUserName"></h3>
+    </div>
+    <div class="background">
+        <div class="main">
+            <form action="">
+                <h1>Create User</h1>
+                <label for="">user Name</label><br>
+                <input type="text" name="" id="newUser" required><br>
+        
+                <label for="">Email</label><br>
+                <input type="email" name="" id="newEmail" required><br>
+        
+                <label for="">Password</label><br>
+                <input type="password" name="" id="newPass" required>
+        
+            </form>
+            <button onclick="create()">Create user</button>
+        
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('headUserName').innerHTML = localStorage.getItem("textValue1");
+
+        function create(){
+
+            // Get data from create user form
+            let newUserName = document.getElementById('newUser').value;
+            let newPassword = document.getElementById('newPass').value;
+            let newEmail = document.getElementById('newEmail').value;
+
+            // Send data via local storage
+            localStorage.setItem("textValue4" , newUserName);
+            localStorage.setItem("textValue5" , newPassword);
+            localStorage.setItem("textValue6" , newEmail);
+
+            // Create user form validation
+            if (newUserName == "" || newPassword == "" || newEmail == ""){
+                alert("Invalid data")
+            }else{
+                if (newEmail.includes("@" && ".") && newEmail.length > 1 ){
+                    alert('User Created Sucessfully');
+                    window.location.assign("newUserLogin.html");
+                }else{
+                    alert("Invalid Email")
+                }
+            }
+
+            
+
+        }
+    </script>
+</body>
+</html>

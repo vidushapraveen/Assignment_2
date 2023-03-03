@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../CSS/newUser.css">
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New User Home</title>
+</head>
+<body>
+    <div class="container">
+        <h3 id="headUserName"></h3>
+        <buttn class="logout" onclick="logout()">LogOut</buttn>
+    </div>
+    <div class="background">
+        <div class="main">
+            <div class="details">
+                <h1 id="userLog"></h1>
+                <h1 id="mailLog"></h1>    
+            </div>
+        </div>    
+    </div>
+
+    <script>
+        document.getElementById('headUserName').innerHTML = localStorage.getItem("textValue4");
+        document.getElementById('userLog').innerText = localStorage.getItem("textValue4")
+        document.getElementById('mailLog').innerText = localStorage.getItem("textValue6")
+
+        function logout(){
+            window.location.assign("index.html");
+        }
+    </script>
+</body>
+</html>

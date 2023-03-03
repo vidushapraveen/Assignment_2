@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(90deg, #dd1616 , #1a3fe6);
+}
+
+.container{
+    font-family: 'Maven Pro', sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: gray;
+    height: 60px;
+    padding-right: 40px;
+}
+
+.background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.background .main{
+     width: 350px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) , rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.18);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 8px 32px 0 rgba(0,0,0,0.37);
+}
+
+.background .main h1{
+    font-family: 'Maven Pro', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.background .main form input{
+    width: 100%;
+    padding: 10px 100px 10px 10px;
+    border-radius: 20px;
+    margin: 10px 0px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border: none;
+}
+
+.background label{
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: 900;
+}
+
+.background .main button{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 7px 25px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background: #0026ffe0;
+    color: #fff;
+}
